@@ -14,6 +14,11 @@ Vemos en esta imagen la lista de los personajes, donde su información se encuen
 ## Docker
 He de destacar que he añadido un archivo docker, con el objetivo de generar una imagen. Aquí dejo los comandos que he utilizado.
 
+Descagar disco docker openjdk
+```
+docker pull openjdk    
+```
+
 Comando genera el jar
 ```
 mvn clean install  
