@@ -14,7 +14,10 @@
   <div class="tittle">
     <h1>PERSONAJES MARVEL</h1>
   </div>
-  <button id="updateCharacters"> Recoger información API</button>
+  <div class="buttons">
+    <button id="updateCharacters"> Recoger información API</button>
+    <button id="deleteAllCharacters"> Eliminar todos los personajes</button>
+  </div>
   <div id="loader" class="loader"></div>
 
   <div id="cards" class="cards">
@@ -82,6 +85,23 @@
       });
     });
 
+    //Función para eliminar todos los personajes
+    $("#deleteAllCharacters").click(function () {
+      //Mostramos el icono de carga 
+      $("#loader").show();
+      var settings = {
+        "url": "/deleteaAllCharacters",
+        "method": "DELETE",
+        "timeout": 0,
+      };
+
+      $.ajax(settings).done(function (response) {
+          location.reload();
+        }).fail(function (response) {
+          location.reload();
+        });
+    });
+
   });
 </script>
 <style>
@@ -107,6 +127,14 @@
   }
 
   .cards {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    flex-direction: row;
+  }
+
+  .buttons {
     width: 100%;
     display: flex;
     flex-wrap: wrap;

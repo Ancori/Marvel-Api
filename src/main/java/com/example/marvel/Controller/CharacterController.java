@@ -52,9 +52,9 @@ public class CharacterController {
         return charactersService.findById(id).get();
     }
 
-    //Eliminar al personaje dado por su id
-    @DeleteMapping("/deleteCharacter/{id}")
-    public void deleteById(@PathVariable String id) {
-        charactersService.deleteById(id);
+    //Eliminar todos los personajes
+    @DeleteMapping("/deleteaAllCharacters")
+    public void deleteAll() {
+        charactersService.removeAll();
     }
 }
